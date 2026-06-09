@@ -182,7 +182,13 @@ section { padding-block: clamp(5rem, 9vw, 8rem); }
   font-weight: 900; color: var(--white);
   line-height: .95; letter-spacing: -.04em;
 }
-.hero-h1-sub { color: var(--orange); }
+.hero-h1-sub {
+  color: var(--orange);
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
 
 .hero-tagline {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
