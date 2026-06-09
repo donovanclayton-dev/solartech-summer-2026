@@ -507,6 +507,7 @@ textarea { resize: vertical; min-height: 88px; }
   padding: 5rem var(--gutter);
   display: flex; flex-direction: column;
   justify-content: center; gap: 1.75rem;
+  align-items: flex-start;
 }
 .photo-split-copy .section-h2 { color: var(--white); }
 .photo-split-copy p:not(.section-tag) {
