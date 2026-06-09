@@ -416,6 +416,28 @@ textarea { resize: vertical; min-height: 88px; }
 .form-note a { color: var(--text-3); text-decoration: underline; text-underline-offset: 2px; }
 .form-note a:hover { color: var(--text-2); }
 
+/* ── CTA Strips ───────────────────────────────────── */
+.cta-strip {
+  background: var(--orange-pale);
+  border-top: 1px solid rgba(245,128,38,.15);
+  border-bottom: 1px solid rgba(245,128,38,.15);
+  padding-block: 1.75rem;
+}
+.cta-strip--navy {
+  background: var(--navy);
+  border-color: transparent;
+}
+.cta-strip--navy p { color: rgba(255,255,255,.85); }
+.cta-strip--navy p strong { color: var(--white); }
+.cta-strip-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-strip p {
+  font-size: 1rem; color: var(--text-1); font-weight: 400;
+}
+.cta-strip p strong { color: var(--navy); }
+
 /* ── Terms ────────────────────────────────────────── */
 .terms {
   background: var(--surface-2);
