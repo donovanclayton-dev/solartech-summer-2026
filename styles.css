@@ -486,7 +486,7 @@ textarea { resize: vertical; min-height: 88px; }
 .photo-split-img { overflow: hidden; }
 .photo-split-img img {
   width: 100%; height: 100%;
-  object-fit: cover; display: block;
+  object-fit: cover; object-position: center 75%; display: block;
 }
 .photo-split-copy {
   background: var(--navy-dark);
