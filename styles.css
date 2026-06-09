@@ -448,8 +448,6 @@ textarea { resize: vertical; min-height: 88px; }
   background: var(--navy);
   border-color: transparent;
 }
-.cta-strip--navy p { color: rgba(255,255,255,.85); }
-.cta-strip--navy p strong { color: var(--white); }
 .cta-strip-inner {
   display: flex; align-items: center; justify-content: space-between;
   gap: 2rem; flex-wrap: nowrap;
@@ -458,6 +456,8 @@ textarea { resize: vertical; min-height: 88px; }
   font-size: 1.05rem; color: var(--text-1); font-weight: 400; line-height: 1.5;
 }
 .cta-strip p strong { color: var(--navy); }
+.cta-strip--navy p { color: rgba(255,255,255,.85); }
+.cta-strip--navy p strong { color: var(--white); }
 .cta-strip .btn { flex-shrink: 0; }
 
 /* ── Terms ────────────────────────────────────────── */
