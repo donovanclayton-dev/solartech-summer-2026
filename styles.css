@@ -482,6 +482,7 @@ textarea { resize: vertical; min-height: 88px; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 540px;
+  padding-block: 0;
 }
 .photo-split-img { overflow: hidden; }
 .photo-split-img img {
