@@ -100,7 +100,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 /* ── Section type ─────────────────────────────────── */
-section { padding-block: clamp(4rem, 7vw, 6.5rem); }
+section { padding-block: clamp(5rem, 9vw, 8rem); }
 
 .section-tag {
   font-size: .72rem; font-weight: 700;
@@ -242,7 +242,7 @@ section { padding-block: clamp(4rem, 7vw, 6.5rem); }
 .highlights-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 .highlight-card {
   background: var(--white); border: 1.5px solid var(--border);
@@ -277,7 +277,7 @@ section { padding-block: clamp(4rem, 7vw, 6.5rem); }
 .how { background: var(--white); }
 .steps {
   display: flex; align-items: flex-start;
-  gap: 0; margin-top: 3rem;
+  gap: 0; margin-top: 4rem;
 }
 .step-item {
   flex: 1; display: flex; flex-direction: column; gap: .75rem;
@@ -419,9 +419,9 @@ textarea { resize: vertical; min-height: 88px; }
 /* ── CTA Strips ───────────────────────────────────── */
 .cta-strip {
   background: var(--orange-pale);
-  border-top: 1px solid rgba(245,128,38,.15);
-  border-bottom: 1px solid rgba(245,128,38,.15);
-  padding-block: 1.75rem;
+  border-top: 1px solid rgba(245,128,38,.18);
+  border-bottom: 1px solid rgba(245,128,38,.18);
+  padding-block: 2.25rem;
 }
 .cta-strip--navy {
   background: var(--navy);
@@ -431,12 +431,13 @@ textarea { resize: vertical; min-height: 88px; }
 .cta-strip--navy p strong { color: var(--white); }
 .cta-strip-inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
+  gap: 2rem; flex-wrap: nowrap;
 }
 .cta-strip p {
-  font-size: 1rem; color: var(--text-1); font-weight: 400;
+  font-size: 1.05rem; color: var(--text-1); font-weight: 400; line-height: 1.5;
 }
 .cta-strip p strong { color: var(--navy); }
+.cta-strip .btn { flex-shrink: 0; }
 
 /* ── Terms ────────────────────────────────────────── */
 .terms {
@@ -496,4 +497,6 @@ textarea { resize: vertical; min-height: 88px; }
   .form-offer-recap { flex-wrap: wrap; justify-content: center; }
   .footer-inner { flex-direction: column; }
   .footer-contact { align-items: flex-start; }
+  .cta-strip-inner { flex-wrap: wrap; }
+  .cta-strip .btn { width: 100%; justify-content: center; }
 }
