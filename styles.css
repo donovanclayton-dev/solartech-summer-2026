@@ -97,6 +97,8 @@ button, input, select, textarea { font: inherit; }
   padding: 1rem 2.25rem;
   font-size: 1rem;
   border-radius: var(--r-md);
+  justify-content: center;
+  text-align: center;
 }
 
 /* ── Section type ─────────────────────────────────── */
