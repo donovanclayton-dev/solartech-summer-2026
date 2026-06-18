@@ -24,10 +24,25 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
 })();
 
-/* ── TrustedForm cert capture on submit ───────────── */
+/* ── Form submit: ownership check + TrustedForm ───── */
 const leadForm = document.querySelector('.lead-form');
 if (leadForm) {
-  leadForm.addEventListener('submit', function () {
+  leadForm.addEventListener('submit', function (e) {
+    const ownership = document.getElementById('home_type_stech');
+    if (ownership && ownership.value === 'Rent') {
+      e.preventDefault();
+      let msg = document.getElementById('ownership-msg');
+      if (!msg) {
+        msg = document.createElement('p');
+        msg.id = 'ownership-msg';
+        msg.style.cssText = 'color:#dc2626;font-size:.85rem;margin-top:.75rem;text-align:center;';
+        ownership.closest('.form-group').appendChild(msg);
+      }
+      msg.textContent = 'Unfortunately, solar installation requires home ownership. Please call us at (619) 743-9193 if you have questions.';
+      ownership.focus();
+      return;
+    }
+
     const tfCert = document.getElementById('xxTrustedFormCertUrl');
     const tfField = document.getElementById('trustedform_cert_url');
     if (tfCert && tfField) tfField.value = tfCert.value;
