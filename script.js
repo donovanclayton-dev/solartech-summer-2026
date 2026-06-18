@@ -2,6 +2,18 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+/* ── UTM capturing ────────────────────────────────── */
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  utms.forEach(key => {
+    const val = params.get(key);
+    if (val) sessionStorage.setItem(key, val);
+    const el = document.getElementById(key);
+    if (el) el.value = sessionStorage.getItem(key) || '';
+  });
+})();
+
 /* ── Sticky header ────────────────────────────────── */
 const header = document.querySelector('[data-header]');
 if (header) {
