@@ -2,17 +2,36 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* ── UTM capturing ────────────────────────────────── */
+/* ── UTM & click ID capturing ─────────────────────── */
 (function () {
   const params = new URLSearchParams(window.location.search);
-  const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-  utms.forEach(key => {
+
+  // UTM params
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(key => {
     const val = params.get(key);
     if (val) sessionStorage.setItem(key, val);
     const el = document.getElementById(key);
     if (el) el.value = sessionStorage.getItem(key) || '';
   });
+
+  // Click IDs (Google, Facebook, Microsoft)
+  [['gclid', 'gclid_stech'], ['fbclid', 'fbclid_stech'], ['msclkid', 'msclkid_stech']].forEach(([param, field]) => {
+    const val = params.get(param);
+    if (val) sessionStorage.setItem(field, val);
+    const el = document.getElementById(field);
+    if (el) el.value = sessionStorage.getItem(field) || '';
+  });
 })();
+
+/* ── TrustedForm cert capture on submit ───────────── */
+const leadForm = document.querySelector('.lead-form');
+if (leadForm) {
+  leadForm.addEventListener('submit', function () {
+    const tfCert = document.getElementById('xxTrustedFormCertUrl');
+    const tfField = document.getElementById('trustedform_cert_url');
+    if (tfCert && tfField) tfField.value = tfCert.value;
+  });
+}
 
 /* ── Sticky header ────────────────────────────────── */
 const header = document.querySelector('[data-header]');

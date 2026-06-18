@@ -29,6 +29,18 @@
 
   <link rel="preload" as="image" href="hero-bg.png">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- TrustedForm -->
+  <script type="text/javascript">
+  (function() {
+    var tf = document.createElement('script');
+    tf.type = 'text/javascript'; tf.async = true;
+    tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
+      "://api.trustedform.com/trustedform.js?provide_referrer=false&field=xxTrustedFormCertUrl&l=" +
+      new Date().getTime() + Math.random();
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+  })();
+  </script>
 </head>
 <body>
 
@@ -263,46 +275,66 @@
         </div>
         <form
           class="lead-form reveal reveal-delay-1"
-          action="https://formspree.io/f/REPLACE_WITH_YOUR_ID"
+          action="https://app.leadconduit.com/flows/683dcfee09edb400758abfbb/sources/67619cff3f30fe6d31c44bc8/submit"
           method="POST"
         >
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" name="first_name" placeholder="First name" required autocomplete="given-name">
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Last name" required autocomplete="family-name">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(619) 000-0000" required autocomplete="tel">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
             </div>
             <div class="form-group">
-              <label for="zip">Zip Code</label>
-              <input type="text" id="zip" name="zip" placeholder="92101" required autocomplete="postal-code" inputmode="numeric" maxlength="5">
+              <label for="phone_1">Phone Number</label>
+              <input type="tel" id="phone_1" name="phone_1" placeholder="(619) 000-0000" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="postal_code">Zip Code</label>
+              <input type="text" id="postal_code" name="postal_code" placeholder="92101" required autocomplete="postal-code" inputmode="numeric" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label for="home_type_stech">Do you own your home?</label>
+              <select id="home_type_stech" name="home_type_stech" required autocomplete="off">
+                <option value="" disabled selected>Select one</option>
+                <option value="Own">Yes, I own my home</option>
+                <option value="Rent">No, I rent</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="ownership">Do you own your home?</label>
-            <select id="ownership" name="ownership" required autocomplete="off">
-              <option value="" disabled selected>Select one</option>
-              <option>Yes, I own my home</option>
-              <option>No, I rent</option>
-            </select>
+            <label for="comments">Anything you'd like us to know? <span class="label-opt">(optional)</span></label>
+            <textarea id="comments" name="comments" rows="3" placeholder="Current monthly electric bill, roof age, questions about the offer..." autocomplete="off"></textarea>
           </div>
-          <div class="form-group">
-            <label for="message">Anything you'd like us to know? <span class="label-opt">(optional)</span></label>
-            <textarea id="message" name="message" rows="3" placeholder="Current monthly electric bill, roof age, questions about the offer..." autocomplete="off"></textarea>
-          </div>
-          <input type="hidden" name="utm_source"   id="utm_source">
-          <input type="hidden" name="utm_medium"   id="utm_medium">
-          <input type="hidden" name="utm_campaign" id="utm_campaign">
-          <input type="hidden" name="utm_term"     id="utm_term">
-          <input type="hidden" name="utm_content"  id="utm_content">
+
+          <!-- UTM & click ID tracking -->
+          <input type="hidden" name="utm_source"           id="utm_source">
+          <input type="hidden" name="utm_medium"           id="utm_medium">
+          <input type="hidden" name="utm_campaign"         id="utm_campaign">
+          <input type="hidden" name="utm_term"             id="utm_term">
+          <input type="hidden" name="utm_content"          id="utm_content">
+          <input type="hidden" name="gclid_stech"          id="gclid_stech">
+          <input type="hidden" name="fbclid_stech"         id="fbclid_stech">
+          <input type="hidden" name="msclkid_stech"        id="msclkid_stech">
+          <input type="hidden" name="trustedform_cert_url" id="trustedform_cert_url">
+
+          <!-- Campaign metadata -->
+          <input type="hidden" name="lead_source_stech"    value="Website - Summer Promo 2026">
+          <input type="hidden" name="campaign_name"        value="Summer Promo 2026">
+          <input type="hidden" name="pv_installation_stech" value="yes">
+
+          <!-- Redirect after submission -->
+          <input type="hidden" name="redir_url" value="https://solartechonline.com">
 
           <button type="submit" class="btn btn-orange btn-submit">Book My Free Consultation</button>
           <p class="form-note">By submitting you agree to be contacted by SolarTech. Offer subject to eligibility requirements. <a href="#terms">See terms.</a></p>
