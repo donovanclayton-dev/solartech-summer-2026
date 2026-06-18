@@ -406,7 +406,9 @@ section { padding-block: clamp(5rem, 9vw, 8rem); }
 
 .lead-form {
   background: var(--white); border-radius: var(--r-xl);
-  padding: 2.5rem; box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg);
+  border: none; display: block; width: 100%;
+  overflow: hidden;
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .form-group { display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.25rem; }
@@ -614,7 +616,7 @@ textarea { resize: vertical; min-height: 88px; }
 
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
-  .lead-form { padding: 1.75rem 1.5rem; }
+  .lead-form { height: 900px; }
   .trust-list { grid-template-columns: 1fr; padding: 1.5rem; }
   .form-offer-recap { flex-wrap: wrap; justify-content: center; }
   .footer-inner { flex-direction: column; }
