@@ -7,11 +7,12 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   const params = new URLSearchParams(window.location.search);
 
   // UTM params
+  const utmDefaults = { utm_campaign: 'Summer-Promo-2026-Organic-Social' };
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(key => {
     const val = params.get(key);
     if (val) sessionStorage.setItem(key, val);
     const el = document.getElementById(key);
-    if (el) el.value = sessionStorage.getItem(key) || '';
+    if (el) el.value = sessionStorage.getItem(key) || utmDefaults[key] || '';
   });
 
   // Click IDs (Google, Facebook, Microsoft)
